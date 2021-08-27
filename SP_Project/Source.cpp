@@ -11,8 +11,10 @@ using namespace std;
 struct project {
 
 	int ID;
-	char title[1000];
-	char breif[1000];
+	string title;
+	string tit2;
+	string breif;
+	string breif2;
 
 
 	int s_day;
@@ -85,7 +87,7 @@ void main() {
 
 	cout << endl;
 
-	cout << " Enter Password:" << endl << endl;
+	cout << " Enter Password:" << endl << endl;                     /*passwoard should contain at least one special character from this $,%,_,#,@ */
 
 
 
@@ -258,9 +260,9 @@ void main() {
 		}
 
 
-		cout << "please select the ID to filter projects " << endl;
+		cout << "please select the Project ID to filter the list of news " << endl;
 
-		cout << "*********************" << endl;
+		cout << "**********************************************************" << endl;
 
 		cin >> id;
 
@@ -309,8 +311,8 @@ void main() {
 		cout << "Thank You ^^ " << endl;
 
 
-		delete[] a_p;
-		delete[] news;
+		/*delete[] a_p;
+		delete[] news;*/
 
 
 	}
@@ -353,18 +355,25 @@ the actual implementation of the function to enter the details of projects */
 
 	for (int i = 0; i < no_projects; i++) {
 
+		string tit_temp;
+		string breif_temp;
 
 
 		cout << "please enter the title of the project " << i + 1 << endl;
+	
+		cin >> tit_temp;
 
-		cin >> a_p[i].title;
+		getline(cin, a_p[i].tit2);
 
+		a_p[i].title =  tit_temp+ a_p[i].tit2;
 
 		cout << "please enter the breif of the project " << i + 1 << endl;
 
-		cin >> a_p[i].breif;
+		cin >> breif_temp;
 
+		getline(cin, a_p[i].breif2);
 
+		a_p[i].breif = breif_temp + a_p[i].breif2;
 		cout << "please enter the first date  of the project " << i + 1 << endl;
 
 		cin >> a_p[i].s_day >> a_p[i].s_month >> a_p[i].s_year;
@@ -449,17 +458,26 @@ void input_news(newss* news, int no_news) {
 
 	for (int i = 0; i < no_news; i++) {
 
-
+		string tit_temp;
+		string breif_temp;
 
 
 		cout << "please enter the title of the  news of the project  " << i + 1 << endl;
 
-		cin >> news[i].p.title;
+		cin >> tit_temp;
+
+		getline(cin, news[i].p.tit2);
+
+		news[i].p.title = tit_temp + news[i].p.tit2;
 
 
 		cout << "please enter the breif of the news of the project " << i + 1 << endl;
 
-		cin >> news[i].p.breif;
+		cin >> breif_temp;
+
+		getline(cin, news[i].p.breif2);
+
+		news[i].p.breif = breif_temp + news[i].p.breif2;
 
 		cout << "please enter the publshing date of the news of the project " << i + 1 << endl;
 
@@ -488,7 +506,7 @@ void listing_all_news(newss* news, int no_news, project* a_p, int no_projects)
 		cout << "the title of news of project " << i + 1 << " : " << news[i].p.title << endl;
 
 
-		cout << " and the title of the project : " << i + 1 << " is " << a_p[i].title << endl;
+		cout << " and the title of the project " << i + 1 << " is " << a_p[i].title << endl;
 
 
 		cout << "the brief of news of project " << i + 1 << " : " << news[i].p.breif << endl;

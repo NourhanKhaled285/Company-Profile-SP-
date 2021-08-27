@@ -1,0 +1,7 @@
+﻿1>------ Build started: Project: SP_Project, Configuration: Debug Win32 ------
+1>Source.cpp
+1>F:\lectures and labs first year\sp -lectures -labs\SP_Project\Company-Profile-SP-\SP_Project\Source.cpp(59,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+1>F:\lectures and labs first year\sp -lectures -labs\SP_Project\Company-Profile-SP-\SP_Project\Source.cpp(246,8): warning C4101: 't': unreferenced local variable
+1>SP_Project.vcxproj -> F:\lectures and labs first year\sp -lectures -labs\SP_Project\Company-Profile-SP-\Debug\SP_Project.exe
+1>Done building project "SP_Project.vcxproj".
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
